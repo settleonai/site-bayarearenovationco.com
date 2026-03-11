@@ -1,256 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bay Area Renovation Co. — Kitchen & Bathroom Remodeling in the Bay Area</title>
-    <meta name="description" content="Professional kitchen and bathroom remodeling in the Bay Area. 35% off kitchens, 25% off bathrooms, free 3D design. Licensed & insured. 21+ years experience.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; }
-        
-        .hero {
-            background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,58,95,0.88)),
-                        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80') center/cover;
-            color: white;
-            padding: 80px 20px 100px;
-            text-align: center;
-        }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
-        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
-        .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 24px; }
-        
-        .cta-btn {
-            display: inline-block;
-            background: #f59e0b;
-            color: #1a1a1a;
-            padding: 16px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.4); }
-        
-        .phone-link { display: block; margin-top: 16px; color: white; font-size: 1.1rem; text-decoration: none; opacity: 0.9; }
-        .phone-link:hover { opacity: 1; }
-        
-        .offers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 960px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
-        }
-        .offer-card {
-            background: white;
-            border-radius: 12px;
-            padding: 32px 24px;
-            text-align: center;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-        }
-        .offer-card .discount { font-size: 2.4rem; font-weight: 800; color: #f59e0b; }
-        .offer-card h3 { margin: 8px 0; font-size: 1.2rem; }
-        .offer-card p { color: #666; font-size: 0.95rem; }
-        
-        .section { padding: 60px 20px; max-width: 960px; margin: 0 auto; }
-        .section h2 { font-size: 2rem; margin-bottom: 16px; text-align: center; font-weight: 700; }
-        .section .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem; }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-        .service-item {
-            background: #f8fafc;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .service-item img { width: 100%; height: 200px; object-fit: cover; }
-        .service-item .content { padding: 20px; }
-        .service-item h3 { font-size: 1.15rem; margin-bottom: 8px; }
-        .service-item p { color: #666; font-size: 0.9rem; }
-        
-        .process {
-            background: #f8fafc;
-            padding: 60px 20px;
-        }
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .step { text-align: center; padding: 20px; }
-        .step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px; height: 48px;
-            background: #1e3a5f;
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-        .step h3 { margin-bottom: 8px; font-size: 1.05rem; }
-        .step p { color: #666; font-size: 0.9rem; }
-        
-        .trust {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .trust-items { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
-        .trust-item { text-align: center; }
-        .trust-item .num { font-size: 2rem; font-weight: 800; color: #1e3a5f; }
-        .trust-item .label { color: #666; font-size: 0.9rem; }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a5f, #0f172a);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .cta-section h2 { font-size: 2rem; margin-bottom: 12px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        
-        footer {
-            background: #0f172a;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 24px 20px;
-            font-size: 0.85rem;
-        }
-        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
-        
-        @media (max-width: 640px) {
-            .hero h1 { font-size: 2rem; }
-            .offers { grid-template-columns: 1fr; margin-top: -30px; }
-            .trust-items { gap: 24px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bay Area Renovation Co. — Full-Service Home Renovation</title>
+<meta name="description" content="Bay Area Renovation Co. — the Bay Area's full-service renovation company. Kitchen, bathroom, whole-home, ADU, and outdoor renovation. 21+ years. Licensed & insured. (415) 907-9070">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1B2A41;
+  --navy-deep: #111D2E;
+  --amber: #D97706;
+  --amber-light: #F59E0B;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+  --charcoal: #374151;
+  --charcoal-light: #6B7280;
+  --border: #E5E7EB;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--charcoal); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); line-height: 1.2; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Header — Professional company style */
+.header { background: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.header-bar {
+  background: var(--navy-deep);
+  padding: 8px 0;
+  font-size: 13px;
+}
+.header-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255,255,255,0.75);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.header-bar a { color: var(--amber-light); text-decoration: none; font-weight: 600; }
+.header-main { padding: 16px 0; }
+.header-main .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  background: var(--navy);
+  color: var(--amber-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+.logo-text h2 { font-size: 20px; margin: 0; color: var(--navy); }
+.logo-text p { font-size: 11px; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 1.5px; margin: 0; }
+.header-actions { display: flex; align-items: center; gap: 20px; }
+.header-phone {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--navy);
+  text-decoration: none;
+}
+.header-phone:hover { color: var(--amber); }
+.header-cta {
+  background: var(--amber);
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.header-cta:hover { background: #B45309; }
+
+/* Hero — Large background with company identity */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(160deg, rgba(17,29,46,0.88) 0%, rgba(27,42,65,0.6) 100%),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover no-repeat;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 0;
+}
+.hero-content {}
+.hero-company {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--amber-light);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.hero h1 { color: var(--white); font-size: 52px; margin-bottom: 20px; }
+.hero p { color: rgba(255,255,255,0.85); font-size: 19px; line-height: 1.7; margin-bottom: 36px; }
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn {
+  padding: 16px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-amber { background: var(--amber); color: var(--white); }
+.btn-amber:hover { background: #B45309; transform: translateY(-2px); }
+.btn-ghost { border: 2px solid rgba(255,255,255,0.5); color: var(--white); padding: 14px 36px; }
+.btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+.hero-credentials {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 44px;
+  backdrop-filter: blur(8px);
+}
+.cred-item { margin-bottom: 28px; }
+.cred-item:last-child { margin-bottom: 0; }
+.cred-item h3 {
+  font-size: 36px;
+  color: var(--amber-light);
+  margin-bottom: 4px;
+}
+.cred-item p { color: rgba(255,255,255,0.75); font-size: 15px; }
+.cred-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 20px 0;
+}
+
+/* Services — Two-row professional layout */
+.services { padding: 80px 0; background: var(--white); }
+.section-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.section-title { font-size: 42px; margin-bottom: 16px; }
+.section-subtitle { font-size: 18px; color: var(--charcoal-light); max-width: 620px; margin-bottom: 52px; }
+.services-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+.services-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.svc-card-lg {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+  cursor: pointer;
+}
+.svc-card-lg img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.svc-card-lg:hover img { transform: scale(1.06); }
+.svc-card-lg .svc-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  background: linear-gradient(transparent, rgba(17,29,46,0.92));
+  color: var(--white);
+}
+.svc-offer {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.svc-overlay h3 { color: var(--white); font-size: 24px; margin-bottom: 6px; }
+.svc-overlay p { font-size: 14px; opacity: 0.85; }
+.svc-card-sm {
+  background: var(--light-gray);
+  border-radius: 10px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.svc-card-sm:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
+.svc-card-sm h3 { font-size: 19px; margin-bottom: 10px; }
+.svc-card-sm p { font-size: 14px; color: var(--charcoal-light); line-height: 1.6; }
+
+/* Company Credentials */
+.credentials { padding: 80px 0; background: var(--navy-deep); color: var(--white); overflow: hidden; }
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.cred-box {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.3s;
+}
+.cred-box:hover { background: rgba(255,255,255,0.06); }
+.cred-box h3 { color: var(--amber-light); font-size: 44px; margin-bottom: 8px; }
+.cred-box p { color: rgba(255,255,255,0.7); font-size: 15px; font-weight: 500; }
+
+/* Renovation Process */
+.process { padding: 80px 0; background: var(--light-gray); }
+.process-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  margin-top: 48px;
+}
+.proc-step {
+  background: var(--white);
+  padding: 36px 24px;
+  text-align: center;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.proc-step:first-child { border-radius: 12px 0 0 12px; }
+.proc-step:last-child { border-radius: 0 12px 12px 0; }
+.proc-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+.proc-step h4 { font-size: 16px; margin-bottom: 8px; }
+.proc-step p { font-size: 13px; color: var(--charcoal-light); line-height: 1.5; }
+.proc-arrow {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--border);
+  font-size: 20px;
+  z-index: 2;
+}
+
+/* Portfolio */
+.portfolio { padding: 80px 0; background: var(--white); }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  gap: 16px;
+  margin-top: 48px;
+}
+.port-item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.port-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.port-item:hover img { transform: scale(1.05); }
+.port-item:first-child { grid-row: 1 / 3; }
+.port-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Testimonials */
+.testimonials { padding: 80px 0; background: var(--light-gray); }
+.test-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.test-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 44px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.test-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.test-stars { color: var(--amber); font-size: 18px; letter-spacing: 2px; }
+.test-label { font-size: 12px; color: var(--charcoal-light); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.test-card blockquote {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+.test-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.test-initials {
+  width: 48px;
+  height: 48px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 17px;
+}
+.test-info p { font-size: 15px; font-weight: 600; color: var(--navy); }
+.test-info span { font-size: 13px; color: var(--charcoal-light); }
+
+/* Why Us */
+.why-us { padding: 80px 0; background: var(--white); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.why-card {
+  padding: 36px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.why-card:hover { border-color: var(--amber); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+.why-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--light-gray);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  color: var(--amber);
+  font-family: 'DM Serif Display', serif;
+  font-weight: bold;
+}
+.why-card h3 { font-size: 20px; margin-bottom: 10px; }
+.why-card p { font-size: 14px; color: var(--charcoal-light); line-height: 1.7; }
+
+/* CTA */
+.cta { padding: 80px 0; background: var(--navy); text-align: center; color: var(--white); }
+.cta h2 { color: var(--white); font-size: 46px; margin-bottom: 16px; }
+.cta p { color: rgba(255,255,255,0.8); font-size: 19px; max-width: 620px; margin: 0 auto 36px; }
+.cta-phone {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  color: var(--amber-light);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 28px;
+}
+.cta-phone:hover { color: var(--white); }
+.btn-primary {
+  background: var(--amber);
+  color: var(--white);
+  padding: 18px 48px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 17px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #B45309; transform: translateY(-2px); }
+.cta-details { margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.5); }
+
+/* Footer */
+.footer { background: var(--navy-deep); color: rgba(255,255,255,0.65); padding: 48px 0 28px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+.footer h4 { color: var(--white); font-size: 17px; margin-bottom: 16px; }
+.footer p { font-size: 14px; line-height: 1.8; }
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+.footer ul a:hover { color: var(--amber-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom a { color: var(--amber-light); text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-credentials { display: none; }
+  .hero h1 { font-size: 42px; }
+  .services-top { grid-template-columns: 1fr; }
+  .services-bottom { grid-template-columns: 1fr 1fr; }
+  .cred-grid { grid-template-columns: 1fr 1fr; }
+  .process-row { grid-template-columns: repeat(3, 1fr); }
+  .proc-step:first-child { border-radius: 10px 0 0 0; }
+  .proc-step:last-child { border-radius: 0 0 10px 0; }
+  .proc-step:nth-child(3) { border-radius: 0 10px 0 0; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .port-item:first-child { grid-row: auto; }
+  .why-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 70vh; }
+  .hero h1 { font-size: 34px; }
+  .hero p { font-size: 17px; }
+  .section-title { font-size: 32px; }
+  .services-bottom { grid-template-columns: 1fr; }
+  .cred-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cred-box { padding: 28px 16px; }
+  .cred-box h3 { font-size: 34px; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+  .proc-step:first-child, .proc-step:last-child, .proc-step:nth-child(3) { border-radius: 0; }
+  .proc-arrow { display: none; }
+  .test-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; grid-template-rows: 260px 260px 260px; }
+  .cta h2 { font-size: 32px; }
+  .cta-phone { font-size: 30px; }
+  .logo-text h2 { font-size: 17px; }
+  .header-phone { display: none; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 28px; }
+  .hero-inner { padding: 60px 0; }
+  .cred-grid { grid-template-columns: 1fr; }
+  .process-row { grid-template-columns: 1fr; }
+  .svc-card-lg { height: 280px; }
+}
+</style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-badge">Serving the Bay Area — Licensed & Insured</div>
-        <h1>Bay Area Home Renovation Done Right</h1>
-        <p>Professional renovations with transparent pricing, clear timelines, and results that exceed expectations.</p>
-        <a href="tel:4159079070" class="cta-btn">Get Your Free Estimate</a>
-        <a href="tel:4159079070" class="phone-link">Or call us: (415) 907-9070</a>
-    </section>
 
-    <div class="offers">
-        <div class="offer-card">
-            <div class="discount">35% Off</div>
-            <h3>Kitchen Remodels</h3>
-            <p>Transform your kitchen with a complete remodel at an unbeatable price.</p>
-        </div>
-        <div class="offer-card">
-            <div class="discount">25% Off</div>
-            <h3>Bathroom Remodels</h3>
-            <p>Upgrade your bathroom with quality renovations tailored to your style.</p>
-        </div>
-        <div class="offer-card">
-            <div class="discount">Free</div>
-            <h3>3D Design & Rendering</h3>
-            <p>See your dream space before we build it with complimentary 3D designs.</p>
-        </div>
+<!-- Header -->
+<header class="header">
+  <div class="header-bar">
+    <div class="container">
+      <span>Licensed & Insured | Full-Service Renovation</span>
+      <span>21+ Years Serving the Bay Area</span>
+      <a href="tel:4159079070">(415) 907-9070</a>
     </div>
-
-    <section class="section">
-        <h2>Our Services</h2>
-        <p class="subtitle">From kitchens and bathrooms to full home renovations, we handle it all.</p>
-        <div class="services-grid">
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen Remodeling">
-                <div class="content">
-                    <h3>Kitchen Remodeling</h3>
-                    <p>Custom cabinetry, countertops, fixtures, and layouts designed around how you live.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Bathroom Remodeling">
-                <div class="content">
-                    <h3>Bathroom Remodeling</h3>
-                    <p>Modern bathrooms with premium materials, expert tile work, and smart design.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Full Home Renovation">
-                <div class="content">
-                    <h3>Full Home Renovation</h3>
-                    <p>Complete home transformations that increase your property value and quality of life.</p>
-                </div>
-            </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-mark">BR</div>
+        <div class="logo-text">
+          <h2>Bay Area Renovation Co.</h2>
+          <p>Full-Service Home Renovation</p>
         </div>
-    </section>
+      </a>
+      <div class="header-actions">
+        <a href="tel:4159079070" class="header-phone">(415) 907-9070</a>
+        <a href="tel:4159079070" class="header-cta">Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <section class="process">
-        <div style="max-width:960px;margin:0 auto;">
-            <h2 style="text-align:center;margin-bottom:40px;">How It Works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h3>Free Consultation</h3>
-                    <p>We visit your home, discuss your vision, and assess the project scope.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h3>3D Design</h3>
-                    <p>See your new space in 3D before construction begins. Completely free.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h3>Build & Install</h3>
-                    <p>Our expert team brings the design to life with quality craftsmanship.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h3>Final Walkthrough</h3>
-                    <p>We walk through every detail together to ensure your complete satisfaction.</p>
-                </div>
-            </div>
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-company">Bay Area Renovation Co.</div>
+        <h1>Bay Area's Full-Service Renovation Company</h1>
+        <p>We're not just contractors -- we're your renovation partner. From initial concept to final inspection, Bay Area Renovation Co. delivers turnkey home renovations backed by 21+ years of expertise and 200+ five-star reviews.</p>
+        <div class="hero-btns">
+          <a href="tel:4159079070" class="btn btn-amber">Call (415) 907-9070</a>
+          <a href="#services" class="btn btn-ghost">Our Services</a>
         </div>
-    </section>
-
-    <section class="trust">
-        <h2>Why Homeowners Trust Us</h2>
-        <div class="trust-items">
-            <div class="trust-item">
-                <div class="num">21+</div>
-                <div class="label">Years Experience</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">200+</div>
-                <div class="label">5-Star Reviews</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">500+</div>
-                <div class="label">Projects Completed</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">100%</div>
-                <div class="label">Licensed & Insured</div>
-            </div>
+      </div>
+      <div class="hero-credentials">
+        <div class="cred-item">
+          <h3>21+</h3>
+          <p>Years of renovation experience across the Bay Area</p>
         </div>
-    </section>
+        <div class="cred-divider"></div>
+        <div class="cred-item">
+          <h3>200+</h3>
+          <p>Five-star reviews from Bay Area homeowners</p>
+        </div>
+        <div class="cred-divider"></div>
+        <div class="cred-item">
+          <h3>12hr</h3>
+          <p>Detailed proposal turnaround after consultation</p>
+        </div>
+        <div class="cred-divider"></div>
+        <div class="cred-item">
+          <h3>Free</h3>
+          <p>3D design rendering included with every renovation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="cta-section">
-        <h2>Ready to Transform Your Home?</h2>
-        <p>Get a free estimate and see what's possible with our complimentary 3D design service.</p>
-        <a href="tel:4159079070" class="cta-btn">Call (415) 907-9070</a>
-    </section>
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Complete Renovation Services</h2>
+    <p class="section-subtitle">Every service you need under one roof. One company, one point of contact, one standard of excellence.</p>
+    <div class="services-top">
+      <div class="svc-card-lg">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80" alt="Kitchen renovation" loading="lazy">
+        <div class="svc-overlay">
+          <span class="svc-offer">35% Off</span>
+          <h3>Kitchen Renovation</h3>
+          <p>Full kitchen redesigns with custom cabinetry, premium countertops, and modern layouts</p>
+        </div>
+      </div>
+      <div class="svc-card-lg">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80" alt="Bathroom renovation" loading="lazy">
+        <div class="svc-overlay">
+          <span class="svc-offer">25% Off</span>
+          <h3>Bathroom Renovation</h3>
+          <p>Luxury bathroom renovations with designer tile, frameless glass, and spa-grade fixtures</p>
+        </div>
+      </div>
+    </div>
+    <div class="services-bottom">
+      <div class="svc-card-sm">
+        <h3>Full Home Renovation</h3>
+        <p>Whole-home transformations that update every room to modern standards while respecting your home's character.</p>
+      </div>
+      <div class="svc-card-sm">
+        <h3>ADU Construction</h3>
+        <p>Fully-permitted accessory dwelling units for rental income, guest housing, or home offices.</p>
+      </div>
+      <div class="svc-card-sm">
+        <h3>Home Additions</h3>
+        <p>Room additions, second stories, and extensions that expand your living space seamlessly.</p>
+      </div>
+      <div class="svc-card-sm">
+        <h3>Outdoor Renovation</h3>
+        <p>Outdoor kitchens, patios, fire features, and entertainment spaces for year-round living.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>Bay Area Renovation Co. — Serving the Bay Area</p>
-        <p style="margin-top:8px;">Serving the Greater Bay Area</p>
-        <p style="margin-top:8px;"><a href="tel:4159079070">(415) 907-9070</a></p>
-        <p style="margin-top:16px;">&copy; 2026 Bay Area Renovation Co.. All rights reserved.</p>
-    </footer>
+<!-- Company Credentials -->
+<section class="credentials">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <p class="section-label" style="color:var(--amber-light);">Why Bay Area Renovation Co.</p>
+      <h2 class="section-title" style="color:var(--white);">The Numbers Speak for Themselves</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-box">
+        <h3>21+</h3>
+        <p>Years of Experience</p>
+      </div>
+      <div class="cred-box">
+        <h3>200+</h3>
+        <p>Five-Star Reviews</p>
+      </div>
+      <div class="cred-box">
+        <h3>100%</h3>
+        <p>Licensed & Insured</p>
+      </div>
+      <div class="cred-box">
+        <h3>Free</h3>
+        <p>3D Design Included</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-label">Our Process</p>
+      <h2 class="section-title">How We Renovate Your Home</h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">A structured, transparent process from first call to final walkthrough.</p>
+    </div>
+    <div class="process-row">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h4>Free Consultation</h4>
+        <p>We visit your home, discuss your goals, and assess the project scope in detail.</p>
+        <span class="proc-arrow">&rarr;</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h4>Proposal in 12hrs</h4>
+        <p>Receive a comprehensive, itemized proposal with clear pricing and timelines.</p>
+        <span class="proc-arrow">&rarr;</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h4>3D Design</h4>
+        <p>Review and refine photorealistic 3D renderings of your renovated space.</p>
+        <span class="proc-arrow">&rarr;</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h4>Materials Selection</h4>
+        <p>Choose from a curated selection of premium countertops, cabinets, tile, and fixtures.</p>
+        <span class="proc-arrow">&rarr;</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">05</div>
+        <h4>Construction</h4>
+        <p>Professional crews execute your renovation on schedule and to specification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio">
+  <div class="container">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Recent Renovation Projects</h2>
+    <p class="section-subtitle">A selection of completed renovations from across the Bay Area.</p>
+    <div class="portfolio-grid">
+      <div class="port-item">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Full home renovation" loading="lazy">
+        <span class="port-label">Whole-Home Renovation</span>
+      </div>
+      <div class="port-item">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Kitchen renovation project" loading="lazy">
+        <span class="port-label">Kitchen</span>
+      </div>
+      <div class="port-item">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="ADU construction" loading="lazy">
+        <span class="port-label">ADU Build</span>
+      </div>
+      <div class="port-item">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="Bathroom renovation" loading="lazy">
+        <span class="port-label">Bathroom</span>
+      </div>
+      <div class="port-item">
+        <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&q=80" alt="Outdoor renovation" loading="lazy">
+        <span class="port-label">Outdoor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-label">Client Testimonials</p>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-rating">
+          <span class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="test-label">Verified Review</span>
+        </div>
+        <blockquote>"Bay Area Renovation Co. handled our entire home renovation -- kitchen, two bathrooms, new flooring throughout, and a complete exterior refresh. The project management was impeccable. Every trade showed up on time, the work was clean, and the final result transformed our home. This is a serious company that delivers serious results."</blockquote>
+        <div class="test-author">
+          <div class="test-initials">LW</div>
+          <div class="test-info">
+            <p>Lisa W.</p>
+            <span>Walnut Creek, CA</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-rating">
+          <span class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="test-label">Verified Review</span>
+        </div>
+        <blockquote>"We used Bay Area Renovation Co. for a major kitchen renovation and ADU build. Having one company manage both projects saved us time and money. Communication was outstanding -- we always knew what was happening and when. The quality of the finished work speaks for itself. Already planning our next project with them."</blockquote>
+        <div class="test-author">
+          <div class="test-initials">AH</div>
+          <div class="test-info">
+            <p>Andrew H.</p>
+            <span>Pleasanton, CA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-us">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-label">The Bay Area Renovation Co. Difference</p>
+      <h2 class="section-title">Built Different. Renovated Better.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">L</div>
+        <h3>Licensed & Insured</h3>
+        <p>Fully licensed, bonded, and insured. Your renovation is protected from start to finish with a company that stands behind its work.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">3D</div>
+        <h3>Free 3D Design</h3>
+        <p>Every renovation includes photorealistic 3D renderings at no extra cost. See your completed project before construction begins.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">F</div>
+        <h3>Financing Available</h3>
+        <p>Flexible financing options make your renovation accessible. Start your project today and pay on a schedule that fits your budget.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">12</div>
+        <h3>12-Hour Proposals</h3>
+        <p>We respect your time. After your consultation, receive a detailed, itemized proposal within 12 hours -- not weeks.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">1</div>
+        <h3>Single Point of Contact</h3>
+        <p>One dedicated project manager from consultation to completion. No runaround, no confusion, no dropped balls.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">21</div>
+        <h3>21+ Years Experience</h3>
+        <p>Two decades of Bay Area renovation expertise. We've seen it all, solved it all, and built it all -- beautifully.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Start Your Renovation Today</h2>
+    <p>Bay Area Renovation Co. delivers turnkey home renovations with a free consultation, 12-hour proposals, and 3D design included.</p>
+    <a href="tel:4159079070" class="cta-phone">(415) 907-9070</a>
+    <a href="tel:4159079070" class="btn-primary">Book Your Free Consultation</a>
+    <p class="cta-details">Licensed & Insured | Financing Available | 200+ Five-Star Reviews</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Bay Area Renovation Co.</h4>
+        <p>The Bay Area's full-service renovation company. Over 21 years of experience delivering premium kitchen, bathroom, whole-home, ADU, and outdoor renovations. Licensed, insured, and backed by 200+ five-star reviews. Financing available on all projects.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Kitchen Renovation</a></li>
+          <li><a href="#">Bathroom Renovation</a></li>
+          <li><a href="#">Full Home Renovation</a></li>
+          <li><a href="#">ADU Construction</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="#">Home Additions</a></li>
+          <li><a href="#">Outdoor Renovation</a></li>
+          <li><a href="#">3D Design</a></li>
+          <li><a href="#">Financing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:4159079070">(415) 907-9070</a></li>
+          <li><a href="#">Bay Area, CA</a></li>
+          <li><a href="#">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Bay Area Renovation Co. Licensed & Insured.</span>
+      <a href="tel:4159079070">(415) 907-9070</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
