@@ -93,7 +93,7 @@ h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); lin
   display: flex;
   align-items: center;
   background: linear-gradient(160deg, rgba(17,29,46,0.88) 0%, rgba(27,42,65,0.6) 100%),
-    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover no-repeat;
+    url('') center/cover no-repeat;
 }
 .hero-inner {
   display: grid;
@@ -480,18 +480,18 @@ h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); lin
   .svc-card-lg { height: 280px; }
 }
 
-.contact-form-section{padding:60px 20px;background:#f8fafc}
-.contact-form-section h2{font-size:2rem;margin-bottom:8px;text-align:center;font-weight:700}
-.contact-form-section .subtitle{text-align:center;color:#666;margin-bottom:32px;font-size:1.05rem}
-.contact-form{max-width:520px;margin:0 auto;background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
-.contact-form label{display:block;font-weight:600;margin-bottom:4px;font-size:0.95rem}
-.contact-form input,.contact-form textarea{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;font-family:inherit;margin-bottom:16px;transition:border-color 0.2s}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#1e3a5f}
-.contact-form textarea{min-height:100px;resize:vertical}
-.contact-form button{width:100%;background:#f59e0b;color:#1a1a1a;padding:14px;border:none;border-radius:8px;font-weight:700;font-size:1.05rem;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
-.contact-form button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,0.4)}
+.contact-form-section{padding:80px 20px;background:#fff;border-top:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB}
+.contact-form-section h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,4vw,40px);color:#1B2A41;margin-bottom:8px;text-align:center}
+.contact-form-section .subtitle{text-align:center;color:#6B7280;margin-bottom:36px;font-size:1.05rem;max-width:500px;margin-left:auto;margin-right:auto}
+.contact-form{max-width:480px;margin:0 auto;background:#F8FAFC;border-radius:16px;padding:36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #E5E7EB}
+.contact-form label{display:block;font-weight:600;margin-bottom:4px;font-size:0.9rem;color:#1B2A41}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 16px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;margin-bottom:14px;transition:border-color 0.2s,box-shadow 0.2s;background:#fff}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,0.1)}
+.contact-form textarea{min-height:90px;resize:vertical}
+.contact-form button{width:100%;background:#D97706;color:#fff;padding:16px;border:none;border-radius:8px;font-weight:700;font-size:1.05rem;cursor:pointer;transition:background 0.2s,transform 0.2s;font-family:'Inter',system-ui,sans-serif}
+.contact-form button:hover{background:#B45309;transform:translateY(-1px);box-shadow:0 8px 24px rgba(217,119,6,0.3)}
 .contact-form button:disabled{opacity:0.6;cursor:not-allowed;transform:none;box-shadow:none}
-.form-status{text-align:center;margin-top:16px;font-size:0.95rem;min-height:24px}
+.form-status{text-align:center;margin-top:14px;font-size:0.9rem;min-height:20px}
 .form-status.success{color:#16a34a}
 .form-status.error{color:#dc2626}
 </style>
@@ -518,7 +518,7 @@ h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); lin
       </a>
       <div class="header-actions">
         <a href="tel:4159079070" class="header-phone">(415) 907-9070</a>
-        <a href="tel:4159079070" class="header-cta">Free Consultation</a>
+        <a href="tel:4159079070" class="header-cta" href="#contact" style="background:#B45309;color:#fff !important;padding:10px 22px;border-radius:6px;font-weight:600;font-size:0.9rem;display:inline-block;">Free Estimate</a>
       </div>
     </div>
   </div>
@@ -570,7 +570,7 @@ h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); lin
     <p class="section-subtitle">Every service you need under one roof. One company, one point of contact, one standard of excellence.</p>
     <div class="services-top">
       <div class="svc-card-lg">
-        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80" alt="Kitchen renovation" loading="lazy">
+        
         <div class="svc-overlay">
           <span class="svc-offer">35% Off</span>
           <h3>Kitchen Renovation</h3>
@@ -578,7 +578,7 @@ h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); lin
         </div>
       </div>
       <div class="svc-card-lg">
-        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80" alt="Bathroom renovation" loading="lazy">
+        
         <div class="svc-overlay">
           <span class="svc-offer">25% Off</span>
           <h3>Bathroom Renovation</h3>
@@ -685,23 +685,23 @@ h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: var(--navy); lin
     <p class="section-subtitle">A selection of completed renovations from across the Bay Area.</p>
     <div class="portfolio-grid">
       <div class="port-item">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Full home renovation" loading="lazy">
+        
         <span class="port-label">Whole-Home Renovation</span>
       </div>
       <div class="port-item">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Kitchen renovation project" loading="lazy">
+        
         <span class="port-label">Kitchen</span>
       </div>
       <div class="port-item">
-        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="ADU construction" loading="lazy">
+        
         <span class="port-label">ADU Build</span>
       </div>
       <div class="port-item">
-        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="Bathroom renovation" loading="lazy">
+        
         <span class="port-label">Bathroom</span>
       </div>
       <div class="port-item">
-        <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&q=80" alt="Outdoor renovation" loading="lazy">
+        
         <span class="port-label">Outdoor</span>
       </div>
     </div>
